@@ -93,6 +93,17 @@ export function init(selector) {
     ctx.b.drawImage(canvas.a, 0, 0);
     ctx.b.restore();
 
+    ctx.b.save();
+    ctx.b.filter = 'blur(4px) brightness(200%)';
+    ctx.b.globalCompositeOperation = 'lighter';
+    ctx.b.drawImage(canvas.a, 0, 0);
+    ctx.b.restore();
+
+    ctx.b.save();
+    ctx.b.globalCompositeOperation = 'lighter';
+    ctx.b.drawImage(canvas.a, 0, 0);
+    ctx.b.restore();
+
     animId = requestAnimationFrame(draw);
   }
 
