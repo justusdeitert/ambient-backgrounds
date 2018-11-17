@@ -72,6 +72,11 @@ export function init(selector) {
     pipeProps[i3] = direction;
     pipeProps[i5] = life;
 
+    if (x > canvas.a.width) pipeProps[i] = 0;
+    if (x < 0) pipeProps[i] = canvas.a.width;
+    if (y > canvas.a.height) pipeProps[i2] = 0;
+    if (y < 0) pipeProps[i2] = canvas.a.height;
+
     if (life > ttl) initPipe(i);
   }
 
