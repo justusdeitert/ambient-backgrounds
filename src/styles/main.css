@@ -21,3 +21,95 @@ body {
   width: 100%;
   height: 100%;
 }
+
+/* UI overlay */
+.ui {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 2.5rem;
+  opacity: 0;
+  transition: opacity 0.5s;
+  pointer-events: none;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.4));
+}
+
+.ui:hover,
+.ui.ui--visible {
+  opacity: 1;
+}
+
+.ui * {
+  pointer-events: auto;
+}
+
+/* Arrows */
+.ui-arrow {
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.3s;
+  flex-shrink: 0;
+}
+
+.ui-arrow:hover {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Center info */
+.ui-center {
+  text-align: center;
+  flex: 1;
+}
+
+.ui-title {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0 0 0.75rem;
+  transition: opacity 0.3s;
+}
+
+/* Dots */
+.ui-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+.ui-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s;
+}
+
+.ui-dot:hover {
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+.ui-dot.active {
+  background: #fff;
+  border-color: #fff;
+}
