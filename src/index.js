@@ -11,6 +11,7 @@ const effectList = [
 let currentIndex = 0;
 let currentCleanup = null;
 
+const ui = document.querySelector('.ui');
 const title = document.querySelector('.ui-title');
 const dotsContainer = document.querySelector('.ui-dots');
 const prevBtn = document.querySelector('.ui-arrow--left');
@@ -64,6 +65,10 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'ArrowLeft') goTo(currentIndex - 1);
   if (e.key === 'ArrowRight') goTo(currentIndex + 1);
 });
+
+// Show UI briefly on load, then let hover take over
+ui.classList.add('ui--visible');
+setTimeout(() => ui.classList.remove('ui--visible'), 3000);
 
 // Determine initial effect from hash
 const hash = window.location.hash.slice(1);
