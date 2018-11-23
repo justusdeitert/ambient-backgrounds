@@ -46,6 +46,8 @@ function loadEffect(index) {
   document.querySelectorAll('.ui-dot').forEach((dot, i) => {
     dot.classList.toggle('active', i === index);
   });
+
+  window.history.replaceState(null, '', `#${effect.name}`);
 }
 
 function goTo(index) {
@@ -63,4 +65,7 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'ArrowRight') goTo(currentIndex + 1);
 });
 
-loadEffect(0);
+// Determine initial effect from hash
+const hash = window.location.hash.slice(1);
+const startIndex = effectList.findIndex(e => e.name === hash);
+loadEffect(startIndex >= 0 ? startIndex : 0);
