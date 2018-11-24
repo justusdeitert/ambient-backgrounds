@@ -2,6 +2,8 @@
 
 A collection of animated canvas background effects built with vanilla JavaScript and the HTML5 Canvas API. Each effect uses simplex noise and particle systems to create smooth, ambient visuals.
 
+**Live demo:** https://ambient-backgrounds.justusdeitert.de
+
 ## Effects
 
 - **Drift** - Noise driven particle flow with glowing trails
